@@ -105,6 +105,29 @@
       background: var(--border);
     }
 
+    /* Archived (collapsed by default) */
+    details.archive { margin-bottom: 48px; }
+
+    details.archive > summary.section-label {
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+    }
+
+    details.archive > summary.section-label::-webkit-details-marker { display: none; }
+
+    details.archive > summary.section-label::before {
+      content: '▸';
+      display: inline-block;
+      transition: transform 0.15s ease;
+    }
+
+    details.archive[open] > summary.section-label::before { transform: rotate(90deg); }
+
+    details.archive > summary.section-label:hover { color: var(--text); }
+
+    details.archive .cards { margin-bottom: 0; }
+
     /* Cards */
     .cards {
       display: flex;
@@ -541,19 +564,20 @@
       </div>
     </a>
 
-    <!-- DynaSplint Tracker -->
-    <a class="card" href="https://danspengeman-creator.github.io/dynasplint/" target="_blank"
-       style="--card-accent: #38bdf8;">
+    <!-- Gym Workouts -->
+    <a class="card" href="https://danspengeman-creator.github.io/gymworkouts/" target="_blank"
+       style="--card-accent: #f97316;">
       <div class="card-top">
-        <span class="card-icon">🦾</span>
-        <span class="card-name">DynaSplint Tracker</span>
+        <span class="card-icon">💪</span>
+        <span class="card-name">Gym Workouts</span>
       </div>
       <span class="card-arrow">→</span>
-      <div class="card-url">danspengeman-creator.github.io/dynasplint/</div>
-      <div class="card-desc">Tracks wear time for the flexion and extension brace used to gently stretch out the elbow.</div>
+      <div class="card-url">danspengeman-creator.github.io/gymworkouts/</div>
+      <div class="card-desc">Weight-training coach and rep counter for your gym plans.</div>
       <div class="card-tags">
-        <span class="tag accent">Health</span>
-        <span class="tag">Single File</span>
+        <span class="tag accent">Fitness</span>
+        <span class="tag">PWA</span>
+        <span class="tag">Google Sheets</span>
       </div>
     </a>
 
@@ -751,6 +775,30 @@
 
 
   </div>
+
+  <details class="archive">
+    <summary class="section-label">Archived</summary>
+
+    <div class="cards">
+
+      <!-- DynaSplint Tracker -->
+      <a class="card" href="https://danspengeman-creator.github.io/dynasplint/" target="_blank"
+         style="--card-accent: #38bdf8;">
+        <div class="card-top">
+          <span class="card-icon">🦾</span>
+          <span class="card-name">DynaSplint Tracker</span>
+        </div>
+        <span class="card-arrow">→</span>
+        <div class="card-url">danspengeman-creator.github.io/dynasplint/</div>
+        <div class="card-desc">Tracked wear time for the flexion and extension brace used to gently stretch out the elbow. No longer in use.</div>
+        <div class="card-tags">
+          <span class="tag accent">Archived</span>
+          <span class="tag">Health</span>
+        </div>
+      </a>
+
+    </div>
+  </details>
 
   <footer>
     <span class="footer-text">// danspengeman-creator &nbsp;&middot;&nbsp; May 2026</span>
